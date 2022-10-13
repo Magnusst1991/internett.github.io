@@ -2,30 +2,64 @@
 <html lang="no">
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
-        <title>Min Tredje nettside</title>
-        
+        <title>Kodepine</title>
     </head>
     <style>
+        main {
+            font-family: "helvetica Neue", sans serif;
+            max-width: 800px;
+            height: 400px;
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            color:white;
+        }
+        nav {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 40px;
+            background-color: black;
+        }
+        a {
+            border-top: 1px solid white;
+            color:white;
+            padding: right 2rem;
+            padding-top: 0.25rem;
+            text-transform: uppercase;
+        }
+        section {
+            background-color: #2c303c;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        h1 {
+            font-size: 4rem;
+            margin:0;
+        }
+        p {
+            font-family:"Garmand";
+        }
         img {
             width:100%;
             aspect-ratio: 1/1;
             object-fit:cover;
         }
+    
     </style>
-    <body>
-        <h1>Reise</h1>
-        <h2>Reise til fiskevann</h2>
-        <p>
-        Vi reiser en tur til <b>Hardangervidda</b> fin tur.
-        </p>
-        <a href="Matematikk.html">MathJax</a>
-        <h3>Huskeliste</h3>
-        <ul>
-            <li>Sovepose</li>
-            <li>Matpakke</li>
-            <li>fiskestang</li>
-        </ul>
-        <img src="Bilder/paris.jpg">
-    </body>
 
+    <main>
+        <nav>
+            <a href="Matematikk.html">MathJax</a>
+            <a href="#">Kapittel 2</a>
+            <a href="#">Kapittel 3</a>
+        </nav>
+        <section>
+            <h1>MathJax</h1>
+            <p>MathJax brukes for å kunne skrive fine latex koder på nettsider.</p>
+            <img src="Bilder/paris.jpg">
+        </section>
+    </main>
 </html>
