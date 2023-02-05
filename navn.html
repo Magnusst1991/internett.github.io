@@ -1,0 +1,14 @@
+<div id="navn">
+
+</div>
+
+<script>
+    let navn= document.querySelector("#navn");
+
+
+    let navn_deSerialized=JSON.parse(localStorage.getItem("minVerdi"));
+    
+    console.log(localStorage)
+    //testEl.innerHTML=minVerdi_deSerialized.alder
+    navn.innerHTML=localStorage.verdi
+</script>
