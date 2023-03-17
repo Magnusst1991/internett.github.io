@@ -1,0 +1,72 @@
+<div>
+    <h1>Her kan du skrive inn tredjeradslikningen din og få løsning på den</h1>
+    <input type="number" id="tall1">
+    <label for="tall1">x<sup>3</sup></label>
+    <span>+</span>
+    <input type="number" id="tall2">
+    <label for="tall2">x<sup>2</sup></label>
+    <span>+</span>
+    <input type="number" id="tall3">
+    <label for="tall3">x+</label>
+    <input type="number" id="tall4">
+    <label for="tall4"></label>
+    <span>=0</span>
+    <br>
+    <button id="knapp1">Skriv ut</button>
+    <button id="knapp2">Løs</button>
+    <p id="resultat1"></p>
+    <p id="resultat2"></p>
+</div>
+<script>
+    var a;
+    var b;
+    var c;
+    var d;
+    function variables(){
+    a=document.querySelector("#tall1");
+    b=document.querySelector("#tall2");
+    c=document.querySelector("#tall3");
+    d=document.querySelector("#tall4");
+    a=Number(a.value);
+    b=Number(b.value)
+    c=Number(c.value)
+    d=Number(d.value)}
+    let knapp1El=document.querySelector("#knapp1")
+    let knapp2El=document.querySelector("#knapp2")
+    let resultat1El=document.querySelector("#resultat1")
+    let resultat2El=document.querySelector("#resultat2")
+    knapp1El.addEventListener("click",vis)
+
+    function vis() {
+        variables()
+        resultat1El.innerHTML=a+"x<sup>3</sup>+"+b+"x<sup>2</sup>+"+c+"x"+d+"="+0;
+    }
+    knapp2El.addEventListener("click",regnut)
+       
+    function regnut() {
+        variables()
+        let x=(-b/(3*a))
+        let C=((c/a)-(b**2/(3*a**2)))
+        let D=(2*b**3-9*a*b*c+27*a**2*d)/(27*a**3)
+        resultat2El.innerHTML=a+"(t+"+x+")"+"<sup>3</sup>"+b+"(t+"+x+")"+"<sup>2</sup>+"+c+"(t+"+x+")"+d+"="+0;
+        resultat2El.innerHTML+="<br>"+"t"+"<sup>3</sup>"+"+"+C+"t"+"+"+D+"="+0
+        let rot =(D/2)**2+(C/3)**3
+        let t=Math.cbrt(-D/2-Math.sqrt(rot))+Math.cbrt(-D/2+Math.sqrt(rot))
+        if (rot<0){
+            rot=Math.abs(rot)
+            let t=Math.cbrt(-D/2-Math.sqrt(rot))+Math.cbrt(-D/2+Math.sqrt(rot))
+            resultat2El.innerHTML+="<br>"+"t="+t
+            x=x+t
+            resultat2El.innerHTML+="<br>"+"x="+x
+        }
+        else{
+        resultat2El.innerHTML+="<br>"+"t="+t
+        x=x+t
+        resultat2El.innerHTML+="<br>"+"x="+x}
+    }
+</script>
+<style>
+    p{
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+</style>
