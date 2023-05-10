@@ -50,6 +50,50 @@
     
     </style>
 
+
+<body>
+	<div class="container">
+		<h1>Antall besøk på denne siden er:</h1>
+		<p id="counter"></p>
+	</div>
+</body>
+<script>
+    function visTeller() {
+	var counter = localStorage.getItem("counter");
+	if (counter === null) {
+		counter = 0;
+	}
+	counter++;
+	localStorage.setItem("counter", counter);
+	document.querySelector("#counter").innerHTML = counter;
+    console.log(counter)
+}
+visTeller()
+</script>
+<style>
+    .container {
+	max-width: 800px;
+	margin: 0;
+	padding: 20px;
+	text-align: center;
+	background-color: #27db1a;
+	box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+	border-radius: 5px;
+}
+
+h1 {
+	font-size: 36px;
+	color: #000000;
+	margin-bottom: 20px;
+}
+
+p {
+	font-size: 24px;
+	color: #666;
+	margin-top: 0;
+}
+</style>
+</html>
     <main>
         <nav>
             <a href="Matematikk.html">test</a>
